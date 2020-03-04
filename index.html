@@ -3,25 +3,31 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <script>
+    <h1>Twiddler</h1>
+     <button onClick="window.location.reload();" class="update">Update me baby!</button>
+    <p id="tweetbank"></p>
+   
 
+    <script>
       $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+    
+        var $p = $('#tweetbank');
+                
 
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + "\n (" + tweet.created_at +")");
+          $tweet.appendTo($p);
           index -= 1;
         }
-
       });
 
     </script>
+  </div>
   </body>
 </html>
