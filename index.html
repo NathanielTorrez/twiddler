@@ -3,49 +3,24 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script type="text/javascript" src="operations.js"></script>    
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
+
   <body>
+    
+    <header>
+    
     <h1>Twiddler</h1>
+  
+    </header>
+
      <button class="update">Update me baby!</button>
-     <div>
-     <p id="newTweets"></p>
-   </div>
-    <p id="tweetbank"></p>
+  
+       <div id="tweetbank"></div>
    
 
-    <script>
-      $(document).ready(function(){
-    
-        var $p = $('#tweetbank');
-        var $b = $("button");
-        var $new = $("#newTweets")
-
-
-
-                
-
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div class="tweet"></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + "\n (" + tweet.created_at +")");
-          $tweet.appendTo($p);
-          index -= 1;
-        }
-
-        $(".update").click(function(){
-          var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + "\n (" + tweet.created_at +")");
-          $tweet.prependTo($new);
-          index -= 1;
-        }});
-      });
-
-    </script>
-  </div>
+   
+  
   </body>
 </html>
