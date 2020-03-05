@@ -58,3 +58,11 @@ button ,
 	font-weight: bold;
 	text-align: center;
 }
+#newTweets {
+	font-size: 18px;
+	font-family: Helvetica,sans-serif; 
+	line-height: 30px; 
+	margin: 5%; 
+	width: 80%;
+}
+
